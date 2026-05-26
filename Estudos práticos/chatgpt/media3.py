@@ -27,6 +27,7 @@ while True:
   print(f'Excelentes: {excelentes}')
   print(f'\nAprovados: {aprovados}')
   print(f'\nReprovados: {reprovados}')
+  print(f'\nRecuperação: {recuperacao}')
   cont = input('\nDeseja continuar? (s/n) ').upper().lower()
   if cont == 's':
     continue
