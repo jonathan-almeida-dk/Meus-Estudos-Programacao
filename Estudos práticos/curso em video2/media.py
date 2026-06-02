@@ -1,6 +1,6 @@
 import os
-os.system('cls' if os.name == 'nt' else 'clear')
 import sys #biblioteca para encerrar ações ou o código em si
+os.system('cls' if os.name == 'nt' else 'clear')
 
 print('\033[32m=\033[m' * 14)
 print('\033[1:30:42mMédia Do Aluno\033[m')
