@@ -4,7 +4,7 @@ from time import sleep
 
 opcoes = 0
 
-print('Escolha 2 números:')
+print('Informe 2 números:')
 n1 = int(input('1º Número: '))
 n2 = int(input('2º Número: '))
 print('=-'*20)
@@ -25,16 +25,13 @@ while opcoes != 5:
         print('=-'*20)
     elif opcoes == 3:
         if n1 > n2:
-            sleep(1)
-            print(f'O maior número é {n1}.')
-            print('=-'*20)
+            maior = n1
         else:
-            sleep(1)
-            print(f'O maior número é {n2}.')
-            print('=-'*20)
+            maior = n2
+        print(f'O maior número entre {n1} e {n2} é {maior}.')
     elif opcoes == 4:
         sleep(1)
-        print('Escolha 2 números:')
+        print('Informe 2 números novamente:')
         n1 = int(input('1º Número: '))
         n2 = int(input('2º Número: '))
         print('=-'*20)
