@@ -48,11 +48,10 @@
 # Dia 5
 # Contar quantas vogais existem numa palavra.
 
-vogais = ['A','E','I','O','U']
+# vogais = ['A','E','I','O','U']
 
-palavra = input('Digite uma frase ou palavra: ').upper().strip()
-for vogal in vogais:
-    print(f'Na frase/palavra {palavra} possui ',palavra.count(vogal), f'{vogal}')
-
+# palavra = input('Digite uma frase ou palavra: ').upper().strip()
+# for vogal in vogais:
+#     print(f'Na frase/palavra {palavra} possui ',palavra.count(vogal), f'{vogal}')
 
 # ===========================================
