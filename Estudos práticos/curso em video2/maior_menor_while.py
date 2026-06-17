@@ -4,15 +4,12 @@
     O programa deve perguntar ao usuário se ele quer ou não continuar a digitar valores.
 '''
 
-lista_numeros = []
-
 soma = quantidade = media = maior = menor = 0
 pergunta = 'S'
 
 while pergunta == 'S':
     numeros = int(input('Digite um número: '))
     print('='*25)
-    lista_numeros.append(numeros)
     soma += numeros
     quantidade += 1
     if quantidade == 1:
