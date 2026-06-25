@@ -3,7 +3,7 @@
 # consecutivas que ele conquistou no final do jogo
 
 from random import randint
-v = 0 # contador de vitórias
+v = 0 
 while True:
     jogador = int(input('Escolha seu número: '))
     computador = randint(0,10)
