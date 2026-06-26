@@ -2,6 +2,10 @@
 # Salvar em arquivo TXT.
 # Dia 13
 # Ler os dados do TXT ao iniciar.
+# Dia 14
+# Refatoração.
+# Melhore o código.
+# Crie funções.
 
 from time import sleep
 lista_nomes = []
@@ -9,6 +13,7 @@ opcoes = 0
 save_nomes = lista_nomes
 
 # ------------------------------FUNÇÕES------------------------------
+
 def ler_arquivo():
     try:
         with open('listanomes.txt','r', encoding='utf-8') as arquivo:
@@ -70,6 +75,8 @@ def opcao_invalida():
     print('Opção inválida, tente novamente.')
     print('=-'*20)
     sleep(0.5)
+
+# ---------------------------CÓDIGO----------------------------------
 
 while opcoes != 6:
     print('=' * 40)
