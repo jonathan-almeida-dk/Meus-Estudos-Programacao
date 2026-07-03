@@ -12,5 +12,5 @@ print('Os valores sorteados foram: ', end='')
 for n in numeros:
     print(f'{n} ',end='')
 
-print(f'\nO maior número é {max(numeros)}.')
-print(f'O menor número é {min(numeros)}.')
+print(f'\nO maior valor é {max(numeros)}.')
+print(f'O menor valor é {min(numeros)}.')
