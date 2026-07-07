@@ -4,10 +4,9 @@
 palavras = ('Placa', 'Semaforo', 'Rua',
            'Pneu', 'Viaduto', 'Ponte',
            'Roda', 'Carro', 'Moto')
-vogais = 'aeiouAEIOU'
 
 for palavra in palavras:
-    print(f'\nNa palavra {palavra} temos', end=' --> ')
-    for vogal in vogais:
-            if vogal in palavra:
-                print(f'{vogal.upper()}', end=' ')
+    print(f'\nNa palavra {palavra.upper()} temos', end=' ')
+    for letra in palavra:
+            if letra.lower() in 'aeiou':
+                print(letra.upper(), end=' ')
