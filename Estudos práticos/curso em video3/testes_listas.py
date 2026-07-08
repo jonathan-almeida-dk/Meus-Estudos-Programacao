@@ -16,6 +16,7 @@ print('='*40)
 print(num)
 print(f'Essa lista tem {len(num)} elementos.') # verifica a quantidade de itens na lista
 print('='*40)
+
 for c, n in enumerate(num): # mudando tipo de visualização
     print(f'Na posição {c} encontrei o valor {n}...')
 print('Final da lista')
