@@ -3,7 +3,7 @@ num[2] = 10
 num.append(7) #adiciona um item ao final da lista
 num.sort(reverse=True) #ordena de trás pra frente
 num.sort()# ordena em ordem crescente (númerica ou alfabética)
-num.insert(2,0) # inseri na posição '2' o item '0'
+num.insert(2,0) # insere na posição '2' o item '0'
 # num.pop(2) # deleta na posição '2'
 num.remove(10) # deleta somente o primeiro item (10 neste caso), se houver repetição, será ignorado.
 
