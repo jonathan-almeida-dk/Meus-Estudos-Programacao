@@ -39,3 +39,4 @@ for c in range(0,3):
     galera.append(dado[:])
     dado.clear()
 print(galera)
+
