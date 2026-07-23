@@ -29,6 +29,7 @@ print('-='*60)
 for p in pessoas:
     print(f'{p[0]} tem {p[1]} anos')
 print('-='*60)
+
 #====================================
 
 galera = []

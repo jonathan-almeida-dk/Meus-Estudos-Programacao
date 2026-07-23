@@ -9,6 +9,7 @@ num.remove(10) # deleta somente o primeiro item (10 neste caso), se houver repet
 
 if 45 in num: # condição para remover todos os itens mesmo sendo repetidos
     num.remove(45)
+    print('Não encontrei o número 45')
 else:
     print('Não encontrei o número 45')
 
