@@ -12,12 +12,11 @@ while True:
     dados.clear()
     resp = input('Quer continuar?: ')
     if resp in 'Nn':
+        print('-'*30)
+        print(' BOLETIM '.center(30))
+        print('-'*30)
+        for n in range(1):
+            print('Aluno: ',info_notas[0][0])
+            media = (info_notas[0][1] + info_notas[0][2]) / 2
+            print('Média: ',media)
         break
-print(info_notas)
-print('-'*30)
-print(' BOLETIM '.center(30))
-print('-'*30)
-print(info_notas[0][0])
-for n in range(1):
-    media = (info_notas[0][1] + info_notas[0][2]) / 2
-print(media)
