@@ -38,7 +38,7 @@ print('='*80)
 for k, v in filme.items():
     print(f'O {k} é {v}.')
     # Resultado:
-    #O título é Star Wars.
+    # O título é Star Wars.
     # O ano é 1977.
     # O Diretor é George Lucas.
 
