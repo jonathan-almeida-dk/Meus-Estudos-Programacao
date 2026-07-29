@@ -9,8 +9,6 @@ dados['sexo'] = 'M'
 print(dados)
 del dados['idade']
 print(dados)
-
-
     # Resultado:
     # Pedro
     # 25
@@ -46,20 +44,6 @@ for k, v in filme.items():
 
 print('='*80)
 print('='*80)
-#=====================================================================
-
-# locadora = []
-# filmes = {{'titulo':'Star Wars',
-#           'ano': 1977,
-#           'diretor': 'George Lucas'},
-
-#           {'titulo': 'Avengers',
-#           'ano':2012,
-#           'diretore':'Joss Whedon'}
-# }
-# locadora.append(filmes)
-# print(locadora)
-
 #=====================================================================
 
 pessoas = {'nome': 'Jonathan', 'sexo': 'M', 'idade': 22}
