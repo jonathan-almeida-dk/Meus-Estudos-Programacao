@@ -5,12 +5,13 @@ numeros = {}
 from time import sleep
 from random import randint
 print('Valores Sorteados:')
-sleep(1.0)
-for j in range(1,6):
+for j in range(1,5):
     jogada = randint(1,6)
     print(f'Jogador {j} tirou {jogada} no dado.')
     numeros[f'Jogador {j}'] = jogada
-    sleep(1.)
-numeros_ordenados = dict(sorted(numeros.items()))
+numeros_ordenados = dict(sorted(numeros.items(),key=lambda item: item[1]))
 print('-='*30)
-print('RANKING DOS JOGADORES'.center(60,'='))
+print(' RANKING DOS JOGADORES '.center(60,'='))
+
+for k, v in numeros_ordenados.items():
+    print(f'{j} lugar {k} jogou {v}')
