@@ -14,4 +14,4 @@ print('-='*30)
 print(' RANKING DOS JOGADORES '.center(60,'='))
 
 for k, v in numeros_ordenados.items():
-    print(f'{j} lugar {k} jogou {v}')
+    print(f'{k} jogou {v}')
