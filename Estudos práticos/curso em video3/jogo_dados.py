@@ -1,17 +1,21 @@
 # Exercício Python 091: Crie um programa onde 4 jogadores joguem um dado
 # e tenham resultados aleatórios. Guarde esses resultados em um dicionário em Python.
 # No final, coloque esse dicionário em ordem, sabendo que o vencedor tirou o maior número no dado.
-numeros = {}
 from time import sleep
 from random import randint
-print('Valores Sorteados:')
-for j in range(1,5):
-    jogada = randint(1,6)
-    print(f'Jogador {j} tirou {jogada} no dado.')
-    numeros[f'Jogador {j}'] = jogada
-numeros_ordenados = dict(sorted(numeros.items(),key=lambda item: item[1]))
-print('-='*30)
-print(' RANKING DOS JOGADORES '.center(60,'='))
+from operator import itemgetter
 
-for k, v in numeros_ordenados.items():
-    print(f'{k} jogou {v}')
+jogo = {'Jogador 1': randint(1,6),
+        'Jogador 2': randint(1,6),
+        'Jogador 3': randint(1,6),
+        'Jogador 4': randint(1,6),}
+ranking = []
+print('Valores Sorteados:')
+sleep(0.75)
+for k, v in jogo.items():
+    print(f'{k} jogou {v} no dado.')
+    sleep(0.75)
+ranking = sorted(jogo.items(), key=itemgetter(1), reverse=True)
+print(' RANKING DOS JOGADORES '.center(60,'='))
+for i, v in enumerate(ranking):
+    print(f'{i+1}º lugar: {v[0]} com {v[1]}')
