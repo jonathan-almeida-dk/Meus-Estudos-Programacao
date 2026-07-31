@@ -10,13 +10,12 @@ trabalhador = {'Nome ' : input('Nome: '),
                'CTPS' : int(input('Carteira de Trabalho (0 não tem): '))
                }
 idade = date.today().year - trabalhador["Data de Nascimento"]
-trabalhador["Idade: "] = idade
+trabalhador["Idade "] = idade
 if trabalhador["CTPS"] != 0:
     trabalhador["Contratação"] = int(input('Ano de contratação: '))
-    trabalhador["Salário"] = float(input('Salário: R$ '))
-    aposentado = trabalhador["Contratação"] + 35
+    trabalhador["Salário"] = int(input('Salário: R$ '))
     print('-='*30)
-    trabalhador["Aposentadoria"] = aposentado
+    trabalhador["Aposentadoria"] = trabalhador["Contratação"] + 35
 
 for k, v in trabalhador.items():
-    print(f'{k}: {v}.')
+    print(f'{k}: {v}')
