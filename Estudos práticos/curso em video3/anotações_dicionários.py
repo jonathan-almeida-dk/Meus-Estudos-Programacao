@@ -57,6 +57,9 @@ for k in pessoas.keys():
     # sexo
     # idade
 print('='*80)
+
+#=====================================================================
+
 for v in pessoas.values():
     print(v)
     #RESULTADO:
@@ -64,6 +67,9 @@ for v in pessoas.values():
     # M
     # 22
 print('='*80)
+
+#=====================================================================
+
 for k, v in pessoas.items():
     print(f'{k} = {v}')
     #RESULTADO:
@@ -71,6 +77,9 @@ for k, v in pessoas.items():
     # sexo = M
     # idade = 22
 print('='*80)
+
+#=====================================================================
+
 pessoas['nome'] = 'Leandro' # ALTERANDO UM ITEM
 pessoas['peso'] = 98.5 # ADICIONANDO UM ITEM À BIBLIOTECA
 for k, v in pessoas.items():
@@ -82,6 +91,9 @@ for k, v in pessoas.items():
     # peso = 98.5
 print('='*80)
 print('='*80)
+
+#=====================================================================
+
 # CRIANDO UMA LISTA COM DICIONÁRIOS
 brasil = []
 estado1 = {'UF': 'Rio de Janeiro', 'Sigla': 'RJ'}
@@ -96,18 +108,23 @@ print(brasil[1]['UF']) # resultado: São Paulo
 print(brasil[1]['Sigla']) # resultado: SP
 print('='*80)
 print('='*80)
+
+#=====================================================================
+
 estados = {}
 brasil = []
 for c in range(0,3): # Guarda itens a lista Brasil
     estados['uf'] = input('Unidade Federativa: ')
     estados['sigla'] = input('Sigla do Estado: ')
     brasil.append(estados.copy())
+
 for e in brasil: # Mostra o que foi adicionado à lista
     print(e)
     # RESULTADO:
     # {'uf': 'Minas Gerais', 'sigla': 'Mg'}
     # {'uf': 'São Paulo', 'sigla': 'SP'}
     # {'uf': 'Acre', 'sigla': 'AC'}
+
 for e in brasil: 
     for k, v in e.items():
         print(f'O campo {k} tem valor {v}.')
@@ -118,6 +135,7 @@ for e in brasil:
         # O campo sigla tem valor SP.
         # O campo uf tem valor parana.
         # O campo sigla tem valor PR.
+
 for e in brasil: 
     for v in e.values():
         print(v, end = ' ')
@@ -126,3 +144,5 @@ for e in brasil:
         # acre ac 
         # sampa sp 
         # parana pr 
+        
+#=====================================================================
