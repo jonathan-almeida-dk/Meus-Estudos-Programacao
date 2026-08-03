@@ -7,15 +7,17 @@
 info = {}
 gols = []
 totgols = 0
-nome = info['Nome'] = input('Nome do Jogador: ')
-partidas = int(input(f'Quantas partidas {nome} jogou? '))
+info['Nome'] = input('Nome do Jogador: ')
+partidas = int(input(f'Quantas partidas {info["Nome"]} jogou? '))
 while True:
     if partidas != 0:
         for c in range(1,partidas+1):
-            info['Gols'] = (int(input(f'Quantos gols na {c}º partida? ')))
-            totgols += info["Gols"] 
+            gol = (int(input(f'Quantos gols ele fez na {c}ª partida? ')))
+            gols.append(gol)
+            totgols += gol
+        info['Gols'] = gols
         break
+info['Total de Gols'] = totgols
+
+
 print(info)
-print('Gols: ',info["Gols"])
-print('Total de gols: ',totgols)
-        
