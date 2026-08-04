@@ -19,5 +19,9 @@ while True:
         break
 info['Total de Gols'] = totgols
 
-
+# DEMOSTRAÇÕES:
 print(info)
+
+for k, v in info.items():
+    print(f'O campo {k} tem o valor {v}.')
+
