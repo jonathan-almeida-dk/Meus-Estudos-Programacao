@@ -7,21 +7,43 @@
 #     D) Uma lista de pessoas com idade acima da média
 
 pessoas = {}
+galera = []
+soma = media = 0
 while True:
+    pessoas.clear()
     pessoas['Nome'] = input('Nome: ')
 
     while True:
         pessoas['Sexo'] = input('Sexo [M/F]: ').upper()
-        if pessoas['Sexo'] not in 'MF':
-            print('Por favor, tente novamente [M/F]')
-        else:
+        if pessoas['Sexo'] in 'MF':
             break
+        print('Por favor, tente novamente [M/F]')
     pessoas['Idade'] = int(input('Idade: '))
+    soma+= pessoas['Idade']
+    galera.append(pessoas.copy())
 
-    continuar = input('Quer continuar? [S/N] ').upper()
-    if continuar in 'N':
+    while True:
+        continuar = input('Quer continuar? [S/N] ').upper()[0]
+        if continuar in 'SN':
+            break
+        print('Por favor, tente novamente [S/N]')
+    if continuar == 'N':
         break
 
-
-print(pessoas)
-
+print('-='*30)
+print(f'Ao todo temos {len(galera)} pessoas cadastadas.')
+media = soma / len(galera)
+print(f'A média de idade é de {media:5.2f} anos.')
+print('As mulheres cadastradas foram ', end='')
+for p in galera:
+    if p['Sexo'] in 'Ff':
+        print(f'{p["Nome"]} ', end='')
+print()
+print('Lista das pessoas que estão acima da média: ')
+for p in galera:
+    if p['Idade'] >= media:
+        print('    ')
+        for k, v in p.items():
+            print(f'{k} = {v}; ', end='')
+        print()
+print('>> ENCERRADO <<')
