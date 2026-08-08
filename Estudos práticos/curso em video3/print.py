@@ -7,7 +7,7 @@ def escreva(msg):
     print(msg)
     print('~'*20)
 
-#  Pograma oficial
-escreva('Gustavo ganabara')
-escreva('Curo de python no youtube')
+#  Programa oficial
+escreva('Gustavo guanabara')
+escreva('Curso de python no youtube')
 escreva('Cev')
