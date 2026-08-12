@@ -2,7 +2,7 @@
 # que receba um texto qualquer como parâmetro e mostre uma mensagem com tamanho adaptável.     
 
 def escreva(msg):
-    tam = len(msg)+4
+    tam = len(msg)
     print('~'*20)
     print(msg)
     print('~'*20)
