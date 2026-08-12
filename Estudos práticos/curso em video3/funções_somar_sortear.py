@@ -5,20 +5,20 @@
 from random import randint as rd
 from time import sleep as sl
 números = []
-def sorteia():
+def sorteia(lista):
     print(f'Os 5 números sorteados são: ', end='')
-    for n in range(0,5):
-        nums = rd(1,9)
-        números.append(nums)
-        print(nums, end=' ', flush=True)
+    for cont in range(0,5):
+        n = rd(1,9)
+        lista.append(n)
+        print(n, end=' ', flush=True)
         sl(1)
 
-def somaPar():
-    par = 0
-    for i, n in enumerate(números):
-        if n % 2 == 0:
-            par += n
-    print(f'\nSomando os valores pares de {números}, temos {par}')
+def somaPar(lista):
+    soma = 0
+    for valor in lista:
+        if valor % 2 == 0:
+            soma += valor
+    print(f'\nSomando os valores pares de {lista}, temos {soma}')
 
-sorteia()
-somaPar()
+sorteia(números)
+somaPar(números)
