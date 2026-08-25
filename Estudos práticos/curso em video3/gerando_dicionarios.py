@@ -8,6 +8,11 @@
     # – A situação (opcional)
 
 def notas(*n, sit = False):
+    ''' -> Função para analisarr notas e situações de vários alunos.
+    :param n: uma ou mais notas dos alunos (aceita várias).
+    :param sit: valor opcional, indicando se deve ou não adicionar situação.
+    :return: Dicionário com várias infromações sobre a situação da turma.
+    '''
     alunos_notas = {}
 
     alunos_notas['total'] = len(n)
@@ -29,3 +34,4 @@ def notas(*n, sit = False):
 # Programa Principal
 resp = notas(5.5,9.5,1,6.5,sit=True)
 print(resp)
+help(notas)
