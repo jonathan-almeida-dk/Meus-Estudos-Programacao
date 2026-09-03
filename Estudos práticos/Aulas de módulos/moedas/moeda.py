@@ -8,11 +8,11 @@
 import locale
 
 def diminuir(preço, taxa):
-    res = preço + (preço * taxa/100)
+    res = preço - (preço * taxa/100)
     return res
 
 def aumentar(preço, taxa):
-    res = preço - (preço * taxa/100)
+    res = preço + (preço * taxa/100)
     return res
 
 def dobro(preço):
