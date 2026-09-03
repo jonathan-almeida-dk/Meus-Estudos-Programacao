@@ -5,26 +5,23 @@
 # Exercício Python 108: Adapte o código do desafio #107,
 # criando uma função adicional chamada moeda() que consiga
 # mostrar os números como um valor monetário formatado.
-import locale
 
-def diminuir(preço, taxa):
+def diminuir(preço=0, taxa=0):
     res = preço - (preço * taxa/100)
     return res
 
-def aumentar(preço, taxa):
+def aumentar(preço=0, taxa=0):
     res = preço + (preço * taxa/100)
     return res
 
-def dobro(preço):
+def dobro(preço=0):
     res = preço * 2
     return res
 
-def metade(preço):
+def metade(preço=0):
     res = preço / 2
     return res
 
 
-def moeda(preço):
-    locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
-    res = locale.currency(preço, grouping=True, symbol=True)
-    return res
+def moeda(preço=0, moeda='R$'):
+    return f'{moeda}{preço:.2f}'.replace('.',',')
