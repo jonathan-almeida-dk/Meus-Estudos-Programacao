@@ -20,3 +20,10 @@ def cadastar_pessoas():
             arquivo.write(f'{nome}\n')
     print('NOME ADICIONADO COM SUCESSO.')
     print('-'*40)
+
+def cadastrados():
+    print('-'*40)
+    print('PESSOAS CADASTRADAS'.center(40))
+    print('-'*40)
+    for n in lista_nomes:
+        print(f'- {n}')
