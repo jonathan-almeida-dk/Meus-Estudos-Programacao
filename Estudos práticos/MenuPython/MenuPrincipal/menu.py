@@ -10,13 +10,20 @@ def menu_principal():
         print('1 - Ver pessoas cadastradas' \
         '\n2 - Cadastrar nova pessoa' \
         '\n3 - Sair do Sistema')
-        resp = int(input('Sua opção: '))
-        if resp == 1:
-            arquivo.cadastrados()
+        try:
+            resp = int(input('Sua opção: '))
+            if resp == 1:
+                arquivo.cadastrados()
+                continue
+            elif resp == 2:
+                arquivo.cadastar_pessoas()
+                continue
+            elif resp == 3:
+                break
+        except (KeyboardInterrupt):
+            print('\nUsuário preferiu não digitar esse número.')
+            return 3
+        except (ValueError, TypeError):
+            print('ERRO: por favor, digite um número inteiro válido.')
             continue
-        elif resp == 2:
-            arquivo.cadastar_pessoas()
-            continue
-        elif resp == 3:
-            break
 menu_principal()
