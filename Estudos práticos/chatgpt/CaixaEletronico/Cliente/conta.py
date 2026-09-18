@@ -1,11 +1,6 @@
-import sys
-import os
 
-# Linha mágica temporária para o Python achar o 'sistema.py' lá atrás
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-# Seus imports de teste
-from sistema import nome, saldo
+nome = input(f'Nome: ')
+saldo = int(input(f'Saldo Inicial da Conta: '))
 
 def cabeçalho(titulo=''):
 
@@ -26,11 +21,13 @@ def  menu():
 
 def consulta():
         cabeçalho('CONSULTA')
+        nome = input(f'Nome: {nome}')
+        saldo = int(input(f'Saldo: {saldo}'))
         print(f'Nome: {nome}')
         print(f'Saldo: {saldo}')
-    
 
 # def depositar():
+
 
 
 
