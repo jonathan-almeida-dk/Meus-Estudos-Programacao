@@ -1,6 +1,6 @@
 
 nome = input(f'Nome: ')
-saldo = int(input(f'Saldo Inicial da Conta: '))
+saldoInicial = int(input(f'Saldo Inicial da Conta: '))
 
 def cabeçalho(titulo=''):
 
@@ -20,22 +20,30 @@ def  menu():
     return resp
 
 def consulta():
+
         cabeçalho('CONSULTA')
-        nome = input(f'Nome: {nome}')
-        saldo = int(input(f'Saldo: {saldo}'))
         print(f'Nome: {nome}')
-        print(f'Saldo: {saldo}')
-
-# def depositar():
+        print(f'Saldo atual: {saldoInicial}')
 
 
+def depositar():
+    while True:
+
+        try:
+            dep = float(input('Quanto deseja depositar? '))
+
+            if dep >= 0:
+                saldoInicial += dep
+                return saldoInicial
+            else:
+                print('ERRO: número abaixo do permitido! Tente novamente.')
+                continue
+        except ValueError:
+            print('ERRO: digite apenas valores numéricos!')
 
 
-
-# def sacar():
-
-
-
-
-# def sair():
-
+def sacar():
+    saque = float(input('Digite o valor de saque: '))
+    if saque > 0:
+        saldoInicial -= saque
+        return saldoInicial
