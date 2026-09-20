@@ -1,7 +1,7 @@
 from time import sleep as sl
 
 nome = input(f'Nome: ')
-saldoInicial = int(input(f'Saldo Inicial da Conta: R$'))
+saldoInicial = float(input(f'Saldo Inicial da Conta: R$'))
 sl(1)
 
 def cabeçalho(titulo=''):
@@ -58,12 +58,13 @@ def sacar():
 
         try:
             saque = float(input('Digite o valor de saque: '))
-            print('Realizando saque...')
-            sl(1.2)
-
+            print('Processando...')
+            sl(0.5)
 
             if 0 < saque <= saldoInicial:
 
+                print('Realizando saque...')
+                sl(1.2)
                 saldoInicial -= saque
                 print(f'Saque de R${saque:.2f} efetuado com sucesso!')
                 print(f'Na sua conta consta R${saldoInicial:.2f}.')
@@ -86,31 +87,42 @@ def sacar():
 def  menu():
     while True:
 
-        cabeçalho('CAIXA ELETRÔNICO')
+        try:
+             
+            cabeçalho('CAIXA ELETRÔNICO')
 
-        resp = int(input('1 - Consultar saldo: \n' \
-        '2 - Depositar: \n' \
-        '3 - Sacar: \n' \
-        '4 - Sair: \n' \
-        'Resposta: '))
-        sl(1)
+            resp = int(input('1 - Consultar saldo: \n' \
+            '2 - Depositar: \n' \
+            '3 - Sacar: \n' \
+            '4 - Sair: \n' \
+            'Resposta: '))
+            sl(1)
 
-        print('='*40)
+            print('='*40)
 
-        # ===== CONDIÇÕES ======
-        if resp == 1:
-            consulta()
-        elif resp == 2:
-            depositar()
-        elif resp == 3:
-            if saldoInicial == 0:
-                print('Sua conta não possui valores a serem sacados!')
-                continue
-            sacar()
-        elif resp == 4:
-            print('ENCERRANDO SISTEMA...')
-            sl(1.2)
-            print('SISTEMA ENCERRADO')
-            break
-    return resp
+            # ===== CONDIÇÕES ======
+            if resp == 1:
+                consulta()
+            elif resp == 2:
+                depositar()
+            elif resp == 3:
+                if saldoInicial == 0:
+                    print('Sua conta não possui valores a serem sacados!')
+                    continue
+                sacar()
+            elif resp == 4:
+                print('ENCERRANDO SISTEMA...')
+                sl(1.2)
+                print('SISTEMA ENCERRADO')
+                break
+            else:
+                 print('Opção inválida! Digite uma opção entre 1 e 4.')
+                 sl(1)
+                 continue
+            
+            return resp
+        except ValueError:
+            print('ERRO: digite apenas valores numéricos!')
+            print('='*40)
+            sl(1)
 menu()
