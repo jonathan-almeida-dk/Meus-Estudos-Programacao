@@ -6,10 +6,18 @@ from time import sleep as sl
 while True:
     try:
         nome = input('Nome: ')
+        if nome == '':
+            print('ERRO: Digite seu nome!')
+            continue
         saldoInicial = float(input('Saldo Inicial da Conta: R$'))
         sl(1)
+
+        if saldoInicial < 0:
+            print('ERRO: número abaixo do permitido! Tente novamente.')
+            continue
         break
-    except (ValueError):
+
+    except (ValueError, SyntaxError, IndentationError):
         print('ERRO: Digite apenas números válidos!')
 
 # ======================= FUNÇÕES =======================
@@ -95,6 +103,13 @@ def sacar():
                     sl(1)
 
 
+def novo_nome():
+    global nome
+
+    nome = str(input('Digite um novo nome: '))
+    return nome
+
+
 
 def  menu():
     while True:
@@ -103,10 +118,11 @@ def  menu():
              
             cabeçalho('CAIXA ELETRÔNICO')
 
-            resp = int(input('1 - Consultar saldo: \n' \
-            '2 - Depositar: \n' \
-            '3 - Sacar: \n' \
-            '4 - Sair: \n' \
+            resp = int(input('1 - Consultar saldo \n' \
+            '2 - Depositar \n' \
+            '3 - Sacar \n' \
+            '4 - Sair \n' \
+            '5 - Alterar nome' \
             'Resposta: '))
             sl(1)
 
@@ -129,6 +145,9 @@ def  menu():
                 sl(1.2)
                 print('SISTEMA ENCERRADO')
                 break
+
+            elif resp == 5:
+                novo_nome()
 
             else:
                  print('Opção inválida! Digite uma opção entre 1 e 4.')
