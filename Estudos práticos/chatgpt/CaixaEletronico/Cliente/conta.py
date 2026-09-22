@@ -1,8 +1,19 @@
 from time import sleep as sl
 
-nome = input(f'Nome: ')
-saldoInicial = float(input(f'Saldo Inicial da Conta: R$'))
-sl(1)
+
+
+# ======================= PROGRAMA INICIAL =======================
+while True:
+    try:
+        nome = input('Nome: ')
+        saldoInicial = float(input('Saldo Inicial da Conta: R$'))
+        sl(1)
+        break
+    except (ValueError):
+        print('ERRO: Digite apenas números válidos!')
+
+# ======================= FUNÇÕES =======================
+
 
 def cabeçalho(titulo=''):
 
@@ -14,7 +25,7 @@ def cabeçalho(titulo=''):
 def consulta():
         cabeçalho('CAIXA ELETRÔNICO')
         print(f'Nome: {nome}')
-        print(f'Saldo atual: R${saldoInicial:.2f}')
+        print(f'Saldo atual: R${saldoInicial:.2f}'.replace('.',','))
         sl(1)
 
 
@@ -33,10 +44,11 @@ def depositar():
                 
                 print('Depositando valor...')
                 sl(1.2)
-                print(f'Deposito de R${dep:.2f} efetuado com sucesso!')
-                print(f'Na sua conta consta R${saldoInicial:.2f}.')
+                print(f'Deposito de R${dep:.2f} efetuado com sucesso!'.replace('.',','))
+                print(f'Na sua conta consta R${saldoInicial:.2f}'.replace('.',','))
                 sl(1.2)
-                return saldoInicial
+                return saldoInicial 
+            
             else:
                 print('ERRO: número abaixo do permitido! Tente novamente.')
                 print('='*40)
@@ -66,8 +78,8 @@ def sacar():
                 print('Realizando saque...')
                 sl(1.2)
                 saldoInicial -= saque
-                print(f'Saque de R${saque:.2f} efetuado com sucesso!')
-                print(f'Na sua conta consta R${saldoInicial:.2f}.')
+                print(f'Saque de R${saque:.2f} efetuado com sucesso!'.replace('.',','))
+                print(f'Na sua conta consta R${saldoInicial:.2f}'.replace('.',','))
 
             else:
                 print('Valor inválido, tente novamente.')
@@ -103,26 +115,29 @@ def  menu():
             # ===== CONDIÇÕES ======
             if resp == 1:
                 consulta()
+
             elif resp == 2:
                 depositar()
+
             elif resp == 3:
                 if saldoInicial == 0:
                     print('Sua conta não possui valores a serem sacados!')
-                    continue
                 sacar()
+
             elif resp == 4:
                 print('ENCERRANDO SISTEMA...')
                 sl(1.2)
                 print('SISTEMA ENCERRADO')
                 break
+
             else:
                  print('Opção inválida! Digite uma opção entre 1 e 4.')
                  sl(1)
                  continue
             
-            return resp
         except ValueError:
             print('ERRO: digite apenas valores numéricos!')
             print('='*40)
             sl(1)
+
 menu()
