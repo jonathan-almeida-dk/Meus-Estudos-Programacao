@@ -1,7 +1,7 @@
 class Xadrez():
     def __init__(self):
 
-        self.torre = input('Qual nome da peça que fica nas \nextremidade inferiores do tabuleiro?:\n')
+        self.torre = input('Qual nome da peça que fica nas \nextremidades inferiores do tabuleiro?:\n')
         print('='*50)
         self.cavalo = input('Qual a peça que pode ser montada na vida real?:\n')
         print('='*50)
