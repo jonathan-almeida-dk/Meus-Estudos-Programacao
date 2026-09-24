@@ -5,9 +5,9 @@ from time import sleep as sl
 # ======================= PROGRAMA INICIAL =======================
 while True:
     try:
-        nome = input('Nome: ')
+        nome = input('Nome: ').strip()
         if nome == '':
-            print('ERRO: Digite seu nome!')
+            print('ERRO: Digite um nome válido!')
             continue
         saldoInicial = float(input('Saldo Inicial da Conta: R$'))
         sl(1)
@@ -17,8 +17,9 @@ while True:
             continue
         break
 
-    except (ValueError, SyntaxError, IndentationError):
+    except (ValueError):
         print('ERRO: Digite apenas números válidos!')
+
 
 # ======================= FUNÇÕES =======================
 
@@ -39,23 +40,23 @@ def consulta():
 
 def depositar():
 
+    global saldoInicial
+
     while True:
 
-        global saldoInicial
-
         try:
-            dep = float(input('Quanto deseja depositar? R$'))
+            deposito = float(input('Quanto deseja depositar? R$'))
 
-            if dep > 0:
+            if deposito > 0:
                 
-                saldoInicial += dep
-                
+                saldoInicial += deposito
+
                 print('Depositando valor...')
                 sl(1.2)
-                print(f'Deposito de R${dep:.2f} efetuado com sucesso!'.replace('.',','))
+                print(f'Deposito de R${deposito:.2f} efetuado com sucesso!'.replace('.',','))
                 print(f'Na sua conta consta R${saldoInicial:.2f}'.replace('.',','))
                 sl(1.2)
-                return saldoInicial 
+                return saldoInicial
             
             else:
                 print('ERRO: número abaixo do permitido! Tente novamente.')
@@ -104,9 +105,12 @@ def sacar():
 
 
 def novo_nome():
-    global nome
 
-    nome = str(input('Digite um novo nome: '))
+    global nome
+    
+    nome = (input('Digite um novo nome: ')).strip()
+    if nome == '':
+        print('ERRO: Digite um nome válido!')
     return nome
 
 
@@ -122,7 +126,7 @@ def  menu():
             '2 - Depositar \n' \
             '3 - Sacar \n' \
             '4 - Sair \n' \
-            '5 - Alterar nome' \
+            '5 - Alterar nome \n' \
             'Resposta: '))
             sl(1)
 
@@ -138,6 +142,7 @@ def  menu():
             elif resp == 3:
                 if saldoInicial == 0:
                     print('Sua conta não possui valores a serem sacados!')
+                    continue
                 sacar()
 
             elif resp == 4:
@@ -150,7 +155,7 @@ def  menu():
                 novo_nome()
 
             else:
-                 print('Opção inválida! Digite uma opção entre 1 e 4.')
+                 print('Opção inválida! Digite uma opção entre 1 e 5.')
                  sl(1)
                  continue
             
