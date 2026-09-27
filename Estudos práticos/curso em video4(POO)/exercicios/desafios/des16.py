@@ -3,12 +3,12 @@
 from rich import print
 
 class funcionario:
-    def __init__(self): # Método Construtor
+    def __init__(self,nome, Setor, Cargo): # Método Construtor
 
         # Atributos de Instância
-        self.nome = 'José'
-        self.setor = 'Administrativo'
-        self.cargo = 'Gerente'
+        self.nome = nome
+        self.setor = Setor
+        self.cargo = Cargo
 
     # Métodos de Instância
     def apresentacao(self):
@@ -17,6 +17,10 @@ class funcionario:
     
 # Declaração dos objetos
 
-fun = funcionario()
-print(fun.apresentacao())
+c1 = funcionario('José','Administrativo','Gerente')
+print(c1.apresentacao())
+
+c2 = funcionario('Luan','TI','Programador')
+print(c2.apresentacao())
+
 
