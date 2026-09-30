@@ -2,7 +2,6 @@
 # Crie também um método que mostre uma etiqueta de preço do produto.
 from rich import print
 from rich.panel import Panel
-from rich.align import Align
 
 class Produto:
 
