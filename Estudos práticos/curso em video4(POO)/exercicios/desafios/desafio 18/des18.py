@@ -44,5 +44,6 @@ class Churrasco:
 
 c1 = Churrasco('Churras dos Amigos', 15)
 c1.analisar()
+
 c2 = Churrasco('Fim de ano', 50)
 c2.analisar()
