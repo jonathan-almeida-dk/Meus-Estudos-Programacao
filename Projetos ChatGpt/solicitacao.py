@@ -1,7 +1,7 @@
 from rich import print
 
 class Solicitacao:
-    def __init__(self, titulo, descricao, solicitante='[black on white] Vazio [/]',prioridade='[yellow]media[/]', status='[green]aberta[/]'):
+    def __init__(self, titulo, descricao, solicitante='[black on white] vazio [/]',prioridade='[yellow]media[/]', status='[green]aberta[/]'):
         self.titulo = titulo
         self.descricao = descricao
         self.solicitante = solicitante
