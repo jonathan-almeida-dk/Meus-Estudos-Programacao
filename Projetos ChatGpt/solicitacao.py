@@ -1,6 +1,7 @@
+from rich import print
 
 class Solicitacao:
-    def __init__(self, titulo, descricao, solicitante='Vazio',prioridade='media', status='aberta'):
+    def __init__(self, titulo, descricao, solicitante='[black on white] Vazio [/]',prioridade='[yellow]media[/]', status='[green]aberta[/]'):
         self.titulo = titulo
         self.descricao = descricao
         self.solicitante = solicitante
@@ -17,9 +18,13 @@ class Solicitacao:
         status_permitidos = ('aberta', 'concluída', 'em andamento')
         if novo_status in status_permitidos:
             self.status = novo_status
-            print('Status atualizado com sucesso!')
+            resultado = True
+            return resultado
         else:
-            print('Status inválido! Escolha: aberta, em andamento ou concluída.')
+            resultado = False
+            return resultado
+
+
 
 
 sol = Solicitacao(
@@ -35,11 +40,61 @@ sol2 = Solicitacao(
     'Alta'
     )
 
+sol3 = Solicitacao(
+    'Envio de Formulário',
+    'Erro de envio de formulário',
+)
+
+
+# =====================================================================
+
+# Solicitação1
+
 print('-='*40)
-sol.atualizar_status('resolvida')
+resultado = sol.atualizar_status("resolvida")
+if resultado:
+    print("[green]Status atualizado![/]")
+else:
+    print("[red]Status inválido![/]")
+print()
+
+print(f'Resultado: {resultado}')
 print(sol.descrita())
 print('-='*40)
 
-sol2.atualizar_status('em andamento')
+# =====================================================================
+
+# Solicitação2
+
+resultado = sol2.atualizar_status("em andamento")
+if resultado:
+    print("[green]Status atualizado![/]")
+else:
+    print("[red]Status inválido![/]")
+print()
+
+print(f'Resultado: {resultado}')
 print(sol2.descrita())
 print('-='*40)
+
+# =====================================================================
+
+# Solicitação3
+
+resultado = sol3.atualizar_status("em andamento")
+if resultado:
+    print("[green]Status atualizado![/]")
+else:
+    print("[red]Status inválido![/]")
+print()
+
+print(f'Resultado: {resultado}')
+print(sol3.descrita())
+print('[green] [ LAÇO FOR ] [/]'.center(80, '='))
+
+# =====================================================================
+solicitacoes = [sol, sol2, sol3]
+
+for solicitacao in solicitacoes:
+    print(solicitacao.descrita())
+    print("-" * 40)
