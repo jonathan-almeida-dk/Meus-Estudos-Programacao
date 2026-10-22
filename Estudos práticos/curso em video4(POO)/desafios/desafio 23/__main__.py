@@ -2,10 +2,17 @@ from rich import print, inspect
 from poligono import *
 
 def main():
-    p1 = Quadrado(5)
+    q = Quadrado(5)
+    inspect(q, methods= True)
+    print(f'Perímetro = {q.perimetro():.1f}mm')
+    print(f'Area = {q.area():.1f}mm²')
 
-    print(f'Perímetro = {p1.perimetro():.1f}')
-    print(f'Area = {p1.area():.1f}')
+    print()
+    
+    c = Circulo(5)
+    inspect(c, methods= True)
+    print(f'Perímetro = {c.perimetro():.1f}mm')
+    print(f'Area = {c.area():.1f}mm²')
 
 if __name__ == '__main__':
     main()

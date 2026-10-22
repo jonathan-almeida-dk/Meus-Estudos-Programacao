@@ -15,7 +15,7 @@
 #     + raio
 #     + perimetro()
 #     + area()
-
+import math
 from abc import ABC, abstractmethod
 
 class Poligono(ABC):
@@ -23,11 +23,11 @@ class Poligono(ABC):
         self.qtd_lados = lados
 
     @abstractmethod
-    def perimetro(self):
-            self.perimetro = self.raio * 4
+    def perimetro(self) -> float:
+        pass
     
-    def area(self):
-        self.area = self.raio ** 2
+    def area(self) -> float:
+        pass
 
 class Quadrado(Poligono):
     def __init__(self, lado = 1):
@@ -41,4 +41,12 @@ class Quadrado(Poligono):
         return self.lado ** 2
 
 class Circulo(Poligono):
-    pass
+    def __init__(self, raio = 1):
+        super().__init__(0)
+        self.raio = raio
+
+    def perimetro(self):
+        return 2 * math.pi * self.raio
+    
+    def area(self):
+        return math.pi * self.raio ** 2
