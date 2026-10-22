@@ -1,17 +1,11 @@
-# Implemente o seguinte diagrama de classes:
+from rich import print, inspect
+from poligono import *
 
-# Poligono{abstract}     <--- Classe Mãe
-#     + qtd_lados
-#     + perimetro() {abstract}
-#     + area() {abstract}
+def main():
+    p1 = Quadrado(5)
 
+    print(f'Perímetro = {p1.perimetro():.1f}')
+    print(f'Area = {p1.area():.1f}')
 
-# Quadrado
-#     + lado
-#     + perimetro()
-#     + area()
-
-# Circulo
-#     + raio
-#     + perimetro()
-#     + area()
+if __name__ == '__main__':
+    main()
