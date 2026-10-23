@@ -2,16 +2,13 @@ from rich import print, inspect
 from cafeteria import *
 
 def main():
-    cha = Cha()
-    inspect(cha, methods= True)
-    print(f'Seu {} está pronto.')
-    cafe = Cafe()
-    inspect(cafe, methods= True)
-    print(f'Seu {} está pronto.')
+    b1 = Cafe()
+    b2 = Cha()
+    b3 = Leite()
 
-    leite = Leite()
-    inspect(leite, methods= True)
-    print(f'Seu {} está pronto.')
+    b1.preparar()
+    b2.preparar()
+    b3.preparar()
 
 if __name__ == '__main__':
     main()

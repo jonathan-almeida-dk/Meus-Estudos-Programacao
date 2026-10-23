@@ -21,20 +21,26 @@
 from abc import ABC, abstractmethod
 # =====================================
 
-class BebidaQuente:
-    def __init__(self,bebida):
-        self.nome = bebida
+class BebidaQuente(ABC):
 
     def preparar(self):
-        pass
+        print('--- Iniciando o Preparo ---')
+        self.ferver_agua()
+        self.misturar()
+        self.servir()
+        print('--- Bebida Pronta ---\n')
 
-    def misturar(self):
-        pass
+
+    def ferver_agua(self):
+        print('1. Fervendo água a 100 graus Celsius.')
+
     
     @abstractmethod
     def misturar(self):
         pass
 
+
+    @abstractmethod
     def servir(self):
         pass
 
@@ -42,24 +48,24 @@ class BebidaQuente:
 
 class Cafe(BebidaQuente):
     def misturar(self):
-        pass
+        print('2. Passando água pressurizada pelo pó de café moído.')
 
     def servir(self):
-        pass
+        print('3. Servindo em xícara pequena.')
 
 # =================================
 
 class Cha(BebidaQuente):
     def misturar(self):
-        pass
+        print('2. Mergulhando sachê de ervas na água.')
 
     def servir(self):
-        pass
+        print('3. Servindo na caneca de porcelana com limão.')
 # =================================
 
 class Leite(BebidaQuente):
     def misturar(self):
-        pass
+        print('2. Passando vapor pressurizada pelo bico do leite.')
 
     def servir(self):
-        pass
+        print('3. Servindo na caneca grande, já com café.')
