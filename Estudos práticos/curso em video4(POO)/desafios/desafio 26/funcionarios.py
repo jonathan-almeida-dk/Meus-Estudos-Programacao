@@ -7,10 +7,10 @@ from rich.panel import Panel
 class Funcionario(ABC):
     salario_minimo = 1612
     inss = 0.075
-    def __init__(self,nome,salario_bruto,salario):
+    def __init__(self,nome,salario_bruto,salarios):
         self.nome = nome
         self.salario_bruto = salario_bruto
-        self.salario = salario
+        self.salarios = salarios
 
     def analisar_salario(self):
         pass
@@ -31,9 +31,9 @@ class Horista(Funcionario):
         self.salario_bruto = self.valor_hora * self.qtd_horas
         self.desconto = self.salario_bruto * self.inss
         self.valor_final = self.salario_bruto - self.desconto
-        self.salario = self.valor_final / self.salario_minimo
+        self.salarios = self.valor_final / self.salario_minimo
 
-        conteudo = f'O salário de [blue]{self.nome}[/] ([purple]{Horista.__name__}[/]) é de [green]R${self.valor_final}[/] e corresponde a [yellow]{self.salario:.1f} salários mínimos[/].'
+        conteudo = f'O salário de [blue]{self.nome}[/] ([purple]{Horista.__name__}[/]) é de [green]R${self.valor_final}[/] e corresponde a [yellow]{self.salarios:.1f} salários mínimos[/].'
         etiqueta = Panel(conteudo,title='Análise de Salário', width=60)
         print(etiqueta)
         
@@ -48,9 +48,9 @@ class Mensalista(Funcionario):
     def calcular_salario(self):
         self.desconto = self.salario_bruto * self.inss
         self.valor_final = self.salario_bruto - self.desconto
-        self.salario = self.valor_final / self.salario_minimo
+        self.salarios = self.valor_final / self.salario_minimo
 
-        conteudo = f'O salário de [blue]{self.nome}[/] ([purple]{Mensalista.__name__}[/]) é de [green]R${self.valor_final}[/] e corresponde a [yellow]{self.salario:.1f} salários mínimos[/].'
+        conteudo = f'O salário de [blue]{self.nome}[/] ([purple]{Mensalista.__name__}[/]) é de [green]R${self.valor_final}[/] e corresponde a [yellow]{self.salarios:.1f} salários mínimos[/].'
         etiqueta = Panel(conteudo,title='Análise de Salário', width=60)
         print(etiqueta)
 
