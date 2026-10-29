@@ -1,3 +1,5 @@
+________________________________________________________________________________________
+
 | ENCAPSULAMENTO |
 
 Visa manter a integridade do sistema, protegendo o estado 
@@ -30,3 +32,48 @@ class B()    class C() <-- classes filhas
       a = A()
       b = B()
       c = C()
+
+_______________________________________________________________________________________
+
+   | ENCAPSULAMENTO parte 2|
+
+   Acesso aos Dados
+
+Existem 2 maneiras de permitir o acesso aos dados encapsulados:
+   - Uso de getters e satters
+   - Uso de decorador @property
+
+
+   Avaliacao
+   ________________
+
+   + nome
+   + disciplina
+   # _nota
+   ________________
+
+   + set_nota(valor)
+   + get_nota()
+
+   main
+   a = Avaliacao()
+   a.nome = 'Gabriel'
+   a.disciplina = 'Inglês'
+   a.set_nota(8.5)
+_______________________________________________
+
+   | DECORADOR @PROPERTY |
+
+   Avaliacao
+   ________________
+   + nome
+   + disciplina
+   # _nota
+   + @nota.getter
+   + @nota.setter
+
+   main
+   a = Avaliacao()
+   a.nome = 'Gabriel'
+   a.disciplina = 'Inglês'
+   a.nota = 8.5
