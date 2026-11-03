@@ -1,27 +1,23 @@
 from rich import print
-from rich.panel import Panel
-class Diario():
-    def __init__(self):
+class Diario:
+    def __init__(self,senhamestra = '123456'):
         self.__segredos = []
-        self.__senha = 123456
+        self.__senha = senhamestra.strip()
 
     def escrever(self,msg):
-        self.__segredos.append(msg)
-        return self.__segredos
+        if isinstance(msg,str) and len(msg) > 0:
+            self.__segredos.append(msg.strip())
+    def ler(self, senha = None):
+        if senha != self.__senha:
+            raise PermissionError('Senha inválida! Você não pode ler meu diário!')
+        else:
+            print(f'[green]Diário LIBERADO![/]')
+            for segredo in self.__segredos:
+                print(f'- {segredo}')
 
-    def ler(self, senha):
-        try:
-            if  senha != self.__senha:
-                raise PermissionError
-            print('[green]Diário Liberado[/]')
-            for indice, segredo in  enumerate(self.__segredos,start=1):
-                print(Panel(
-                    f'[italic]{segredo}[/]',
-                    title=f'Página {indice}',
-                    border_style= 'cyan',
-                    expand=False
-                ))
-        except PermissionError:
-            print('Você não pode ler o diário!')
+    @property
+    def senha(self):
+        raise PermissionError(f'Ninguém tem permissão de ver a senha!')
+
             
 
